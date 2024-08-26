@@ -9,6 +9,5 @@ app.register_blueprint(login)
 app.register_blueprint(cadastro)
 app.register_blueprint(index)
 
-
 if __name__ == '__main__':
     app.run(debug=True)

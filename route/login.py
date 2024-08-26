@@ -1,4 +1,6 @@
 from flask import Blueprint,render_template,request,redirect,url_for
+from utils.crypt import encriptografar
+from utils.db import adicionar, db
 
 login = Blueprint('login', __name__)
 
@@ -10,6 +12,14 @@ def gerar_login():
 def login_post():
     username = request.form.get('username')
     email = request.form.get('email')
-    password = request.form.get('password')
+    password = request.form.get('password').encode('utf-8')
+    hashed_password = encriptografar(password)
 
-    return redirect(url_for('index.gerar_index'))
+    print(username, email, hashed_password)
+
+    for i in db:
+       if i["username"] == username and i["password"] == password:
+          print('tudo cerot')
+          return redirect(url_for('index.gerar_index'))
+
+    return redirect(url_for('login.gerar_login'))
