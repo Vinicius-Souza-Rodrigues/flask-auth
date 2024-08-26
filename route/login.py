@@ -18,7 +18,7 @@ def login_post():
     print(username, email, hashed_password)
 
     for i in db:
-       if i["username"] == username and i["password"] == password:
+       if i["username"] == username and i["hashed_password"] == hashed_password:
           print('tudo cerot')
           return redirect(url_for('index.gerar_index'))
 
