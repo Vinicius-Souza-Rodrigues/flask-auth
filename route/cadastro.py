@@ -19,11 +19,10 @@ def cadastro_post():
     if password == confirm_password:
         hashed_password = encriptografar(password)
     else:
+        #flash('Valores errados!')
         return redirect(url_for('cadastro.gerar_cadastro'))
     
     adicionar(name, username, email, hashed_password)
-    print('td certo')
     #flash("usuario cadastrado")
-    print(db)
 
     return redirect(url_for('login.gerar_login'))
