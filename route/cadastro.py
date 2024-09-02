@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, Flask, redirect, request, url_for, flash
+from flask import Blueprint, render_template, Flask, redirect, request, url_for
 from utils.crypt import encriptografar
 from utils.db import db, adicionar
 

@@ -13,16 +13,23 @@
       </div> <!--grey-size-->
             <div class="black-size">
         <form action="{{url_for('login.login_post') }}" method = 'POST'>
-            
-                <label for="username">Name</label>
-                <input type="text" class="from-control" name="username" id="username" required>
 
-                <label for="email">Email</label>
-                <input type="email" class="from-control" name="email" id="email" required>
-                
-                <label for="password">password</label>
-                <input type="password" class="from-control" name="password" id="password" required>
-                
+          <div class="username_div">
+            <label for="username">Name</label>
+            <input type="text" class="from-control" name="username" id="username" required>
+          </div>
+          
+          <div class="email_div">
+            <label for="email">Email</label>
+            <input type="email" class="from-control" name="email" id="email" required>
+          </div>
+
+          <div class="password_div">
+            <label for="password">password</label>
+            <input type="password" class="from-control" name="password" id="password" required>
+            <a href="{{url_for('forgot_password.gerar_forgot_password')}}">forgot password</a>
+          </div>
+
                 <input type="submit" class="btn btn-primary">
             </div> <!--black-size-->
         </form>
