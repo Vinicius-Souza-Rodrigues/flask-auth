@@ -8,7 +8,7 @@ forgot_password = Blueprint('forgot_password', __name__)
 def gerar_forgot_password():
     return render_template('forgot_password.html')
 
-@forgot_password.route('/forgot_password', methods = ['UPDATE'])
+@forgot_password.route('/forgot_password', methods = ['POST'])
 def forgot_password_post():
     username = request.form.get('username')
     password = request.form.get('password').encode('utf-8')
